@@ -91,10 +91,44 @@ $ git
   $ git diff
   ```
 
-- 查看所有修改历史：
+- 查看所有commit历史：
 
   ```shell
   $ git log
   ```
 
+  简洁版：
   
+  ```shell
+  $ git log --pretty=oneline
+  ```
+
+- 查看输入的命令历史：（来确定要回到未来的哪个版本）
+
+  ```shell
+$ git reflog
+  ```
+
+- 回退版本：
+
+  - HEAD：当前版本
+
+  - HEAD^：上一个版本
+
+  - HEAD^^：上上个版本
+
+  - HEAD~100：上100个版本
+
+  回退上一个版本：
+
+  ```shell
+  $ git reset --hard HEAD^
+  ```
+
+  根据版本号回退到制定版本（包括"未来"的版本，下面1094a为版本号前5位）：
+  
+  ```shell
+  $ git reset --hard 1094a
+  ```
+
+- 
