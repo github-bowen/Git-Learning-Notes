@@ -79,3 +79,14 @@ $ git
 
 ### 增删改查
 
+- 查看仓库状态（是否有文件被修改未add，add后未commit）：
+
+  ```shell
+  $ git status
+  ```
+
+- 查看修改细节
+
+  ```shell
+  $ git diff
+  ```
