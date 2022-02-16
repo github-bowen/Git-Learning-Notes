@@ -85,9 +85,16 @@ $ git
   $ git status
   ```
 
-- 查看修改细节
+- 查看最新一次未commit修改与最新一次已commit修改的区别：
 
   ```shell
   $ git diff
   ```
 
+- 查看所有修改历史：
+
+  ```shell
+  $ git log
+  ```
+
+  
