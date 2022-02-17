@@ -143,26 +143,48 @@
 $ git reflog
   ```
 
-- 回退版本：
+- **回退与撤销**
 
-  - HEAD：当前版本
+  - 回退（版本库）版本——在committed(版本库)中切换： 
 
-  - HEAD^：上一个版本
-
-  - HEAD^^：上上个版本
-
-  - HEAD~100：上100个版本
-
-  回退上一个版本：
-
-  ```shell
-  $ git reset --hard HEAD^
-  ```
-
-  根据版本号回退到制定版本（包括"未来"的版本，下面1094a为版本号前5位）：
+    > - HEAD：当前版本
+    >
+    > - HEAD^：上一个版本
+    >
+    > - HEAD^^：上上个版本
+    >
+    > - HEAD~100：上100个版本
+    >
+    > 回退上一个版本： 
+    > ```shell
+    > $ git reset --hard HEAD^
+    > ```
+    > 根据版本号回退到制定版本（包括"未来"的版本，下面1094a为版本号前5位）：
+    >```shell
+    $ git reset --hard 1094a
+    > ```
   
-  ```shell
-  $ git reset --hard 1094a
-  ```
-
+  - 撤销工作区修改——从工作区回退到最近一次commit（版本库）或add（暂存区）的状态:
+    >即直接丢弃工作区：
+    >```shell
+    >$ git checkout -- file
+    >```
+    >或
+    >```shell
+    >$ git restore file
+    >```
+    
+  - 撤销暂存区修改——将暂存区修改撤销，放回工作区：
+  
+    > 即丢弃暂存区，放回工作区（工作区可以进一步丢弃）：
+    >
+    > ```shell
+    > $ git reset HEAD file
+    > ```
+    > 或
+    > ```shell
+    > $ git restore --staged file
+    > ```
+  
 - 
+
