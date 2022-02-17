@@ -37,6 +37,8 @@
 
 - **reset**：清除历史输入
 
+- **cat**：concatenate 显示内容
+
 ## Git Bash快捷键
 
 - 复制：ctrl + insert
@@ -44,11 +46,27 @@
 
 ## Git 使用
 
-查看git相关命令说明
+### Git初始化与帮助
 
-```shell
-$ git
-```
+- 查看git相关命令说明
+
+  ```shell
+  $ git
+  ```
+
+- 设置名字和邮箱
+
+  ```shell
+  $ git config --global user.name "Your Name"
+  $ git config --global user.email "email@example.com"
+  ```
+
+- 查看当前编辑者姓名和邮箱
+
+  ```shell
+  $ git config user.name
+  $ git config user.email
+  ```
 
 ### 创建repository
 
