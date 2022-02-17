@@ -41,6 +41,8 @@
 
 - **cat**：concatenate 显示内容
 
+- **rm**：remove file 删除文件
+
 ### VI相关命令
 
 - **vi**：在VI中打开已存在文件或创建新文件
@@ -165,7 +167,7 @@ $ git reflog
     > ```
   
   - 撤销工作区修改——从工作区回退到最近一次commit（版本库）或add（暂存区）的状态:
-    >即直接丢弃工作区：
+    >即直接丢弃工作区：（checkout还有其他用法：见下面*从版本库删除某个文件*）
     >```shell
     >$ git checkout -- file
     >```
@@ -186,5 +188,26 @@ $ git reflog
     > $ git restore --staged file
     > ```
   
-- 
+- 从版本库删除某个文件：
+
+  ```shell
+  $ git rm file
+  $ git commit -m "message"
+  ```
+
+  若在工作区误删某个文件，可以通过如下命令从版本库恢复到工作区：
+
+  ```shell
+  $ git checkout -- file
+  ```
+
+  或：
+
+  ```shell
+  $ git restore file
+  ```
+
+  *删除与修改命令相同的原因：*删除也是一种改变
+
+### 远程仓库
 
