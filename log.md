@@ -60,7 +60,7 @@
 - 复制：ctrl + insert
 - 粘贴：shift + insert
 
-## Git 使用
+## Git 命令
 
 ### Git初始化与帮助
 
@@ -142,7 +142,7 @@
 - 查看输入的命令历史：（来确定要回到未来的哪个版本）
 
   ```shell
-$ git reflog
+  $ git reflog
   ```
 
 - **回退与撤销**
@@ -211,12 +211,65 @@ $ git reflog
 
 ### 远程仓库
 
+- 准备工作步骤
 
+  1. 进入用户主目录(c:Users/BH LU)：
 
+     ```shell
+     $ cd ~
+     ```
 
+  2. 创建SSH Key：
 
+     ```shell
+     $ ssh-keygen -t rsa -C "youremail@example.com"
+     ```
 
+     一路回车后在/.ssh中有id_rsa(私钥)和id_rsa.pub(公钥)。
 
+  3. 在Github设置SSH Key：填上任意Title，在Key文本框里粘贴`id_rsa.pub`文件的内容。
+  
+- 首次将本地库push到远程库上：（在github中新建了```GitLearningNotes```这一repository）
+  
+  在本地对应仓库运行命令：
+  
+  ```shell
+  $ git remote add origin git@github.com:<github name>/<repository name>.git
+  ```
+  
+  e.g.:
+  
+  ```shell
+  $ git remote add origin git@github.com:NormalLLer/GitLearningNotes.git
+  ```
+  
+  然后：（回车后会提示输入密钥-同qq密码）
+  
+  ```shell
+  $ git push -u origin master
+  ```
+
+- 以后push：
+
+  ```shell
+  $ git push origin master
+  ```
+
+- 查看远程库信息：
+
+  ```shell
+  $ git remote -v
+  ```
+
+- 删除远程库：（指解除本地库与远程库的绑定）
+
+  ```shell
+  $ git remote rm name
+  e.g:
+  $ git remote rm origin
+  ```
+
+  
 ## 相关资料
 
 - [廖雪峰Git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
