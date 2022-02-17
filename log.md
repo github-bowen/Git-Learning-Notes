@@ -188,7 +188,7 @@ $ git reflog
     > $ git restore --staged file
     > ```
   
-- 从版本库删除某个文件：
+- 从版本库删除某个文件（本地，即工作区也会一起被删除）：
 
   ```shell
   $ git rm file
@@ -211,3 +211,15 @@ $ git reflog
 
 ### 远程仓库
 
+
+
+
+
+
+
+## 相关资料
+
+- [廖雪峰Git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
+- [廖雪峰Git命令整理](https://liaoxuefeng.gitee.io/resource.liaoxuefeng.com/git/git-cheat-sheet.html#)
+- [Linux常用命令整理](https://www.cnblogs.com/hi3254014978/p/12643601.html)
+- 更多见收藏夹
