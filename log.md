@@ -1,11 +1,13 @@
 ## Linux命令
 
+### 基础命令
+
 - **cd**：change direcroty 切换目录
 
   **e.g.**：(注意不是反斜杠)
   
   ```shell
-  $ cd e:ImportantFile/LearningFiles/2_2/OOP/PreviewFiles/GitLeaningNotes
+  $ cd e:ImportantFile/LearningFiles/2_2/OOP/PreviewFiles/GitLearningNotes
   
 - **ls**：list files 列出非隐藏文件
 
@@ -38,6 +40,18 @@
 - **reset**：清除历史输入
 
 - **cat**：concatenate 显示内容
+
+### VI相关命令
+
+- **vi**：在VI中打开已存在文件或创建新文件
+  
+- **i**：进入插入模式
+
+- **Esc**：退出插入模式
+
+- **u**：撤销上次更改
+
+- **shift + zz**：保存文件并退出
 
 ## Git Bash快捷键
 
