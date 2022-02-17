@@ -22,7 +22,8 @@
 
   ```shell
   $ ls
-  GitLeaningNotes/  OO工具链教程.pdf  推送.jpg```
+  GitLeaningNotes/  OO工具链教程.pdf  推送.jpg
+  ```
 
 - **ls -a**：list files -all 列出所有文件
 
@@ -162,8 +163,8 @@
     > $ git reset --hard HEAD^
     > ```
     > 根据版本号回退到制定版本（包括"未来"的版本，下面1094a为版本号前5位）：
-    >```shell
-    $ git reset --hard 1094a
+    > ```shell
+    > $ git reset --hard 1094a
     > ```
   
   - 撤销工作区修改——从工作区回退到最近一次commit（版本库）或add（暂存区）的状态:
@@ -209,7 +210,9 @@
 
   *删除与修改命令相同的原因：*删除也是一种改变
 
-### 远程仓库
+### 远程仓库（push、clone）
+
+- 注：笔记中使用```SSH```协议，github还支持```HTTP```协议。
 
 - 准备工作步骤
 
@@ -225,11 +228,11 @@
      $ ssh-keygen -t rsa -C "youremail@example.com"
      ```
 
-     一路回车后在/.ssh中有id_rsa(私钥)和id_rsa.pub(公钥)。
+     一路回车后在/.ssh中有```id_rsa```(私钥)和```id_rsa.pub```(公钥)。
 
   3. 在Github设置SSH Key：填上任意Title，在Key文本框里粘贴`id_rsa.pub`文件的内容。
   
-- 首次将本地库push到远程库上：（在github中新建了```GitLearningNotes```这一repository）
+- **首次**将本地库push到远程库上：（在github中新建了```GitLearningNotes```这一repository）
   
   在本地对应仓库运行命令：
   
@@ -249,7 +252,7 @@
   $ git push -u origin master
   ```
 
-- 以后push：
+- 将本地库push到远程库：
 
   ```shell
   $ git push origin master
@@ -267,6 +270,12 @@
   $ git remote rm name
   e.g:
   $ git remote rm origin
+  ```
+
+- 从远程库克隆
+
+  ```shell
+  $ git clone git@github.com:<Github name>/<repository name>.git
   ```
 
   
