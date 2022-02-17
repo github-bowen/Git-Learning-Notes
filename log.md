@@ -117,11 +117,13 @@
   $ git status
   ```
 
-- 查看最新一次未commit修改与最新一次已commit修改的区别：
+- 查看**工作区**与**暂存区**的区别：
 
   ```shell
   $ git diff
   ```
+
+  查看
 
 - 查看所有commit历史：
 
