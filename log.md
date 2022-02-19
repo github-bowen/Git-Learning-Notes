@@ -59,8 +59,6 @@
   #    sudo为super user do
   ```
 
-  
-
   显示apt可升级软件、apt/snap更新：
 
   ```shell
@@ -68,7 +66,7 @@
   $ sudo apt upgrade xxx
   $ sudo snap refresh <xxx>  # 若不加文件名则更新全部
   ```
-
+  
 - 卸载软件：
 
   ```shell
@@ -102,7 +100,6 @@
   $ free [-b  -k  -m]  # B / KB / MB
   ```
 
-  
 
 ### VI相关命令
 
