@@ -274,7 +274,7 @@
 
   *删除与修改命令相同的原因：*删除也是一种改变
 
-### 远程仓库（push、clone）
+### 远程仓库
 
 - 注：笔记中使用```SSH```协议，github还支持```HTTP```协议。
 
@@ -341,8 +341,52 @@
   ```shell
   $ git clone git@github.com:<Github name>/<repository name>.git
   ```
+### 分支管理
 
-  
+- 创建分支：
+
+  ```shell
+  $ git branch <name>
+  ```
+
+- 切换分支：
+
+  ```shell
+  $ git checkout <name>
+  # or
+  $ git switch <name>
+  ```
+
+- 创建并切换分支
+
+  ```shell
+  $ git checkout -b <name>
+  # or
+  $ git switch -c <name>
+  ```
+
+- 查看分支：
+
+  ```shell
+  $ git branch  # 输出带星号的为当前分支
+  ```
+
+- 与name分支合并：
+
+  ```shell
+  $ git merge <name>
+  ```
+
+- 删除分支：
+
+  ```shell
+  $ git branch -d <name>
+  ```
+
+- 
+
+
+
 ## 相关资料
 
 - [廖雪峰Git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
