@@ -46,6 +46,42 @@
 
 - **reboot**：重启
 
+### 具体指令(Ubuntu)
+
+- 显示已安装软件：
+
+  ```shell
+  $ sudo apt list --installed
+  ```
+
+  注：```apt```为```advanced packaging tool```
+
+  ​		```sudo```为```super user do```
+
+  显示可升级软件：
+
+  ```shell
+  $ sudo apt list --upgradeable
+  ```
+
+- 卸载软件：
+
+  ```shell
+  $ sudo apt remove xxx
+  ```
+
+  删除软件（包括所有文件）:
+
+  ```shell
+  $ sudo apt purge xxx
+  ```
+
+- 安装软件包：
+
+  ```shell
+  $ sudo apt install xxx
+  ```
+
 ### VI相关命令
 
 - **vi**：在VI中打开已存在文件或创建新文件
