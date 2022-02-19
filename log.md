@@ -1,4 +1,4 @@
-## Linux命令
+## Linux/Shell命令
 
 ### 基础命令
 
@@ -27,6 +27,10 @@
 
 - **ls -a**：list files -all 列出所有文件
 
+- **ls -l**：显示文件时间记录
+
+- **touch**：更改文件时间属性，若不存在则创建一个新文件
+
 - **mkdir**：make directory 创建目录
 
   **e.g.**：
@@ -45,6 +49,8 @@
 - **rm**：remove file 删除文件
 
 - **reboot**：重启
+
+- **echo**：打印字符串
 
 ### 具体指令(Ubuntu)
 
@@ -368,7 +374,7 @@
   $ git branch  # 输出带星号的为当前分支
   ```
 
-- 与name分支合并：
+- fast forward模式与name分支合并（合并后log中无分支名字）：
 
   ```shell
   $ git merge <name>
@@ -388,9 +394,52 @@
   # --abbrev-commit: 缩写前面序号SHA （abbreviation n.缩写）
   ```
 
-  
 
+- 普通模式合并分支（合并后log有分支名记录）：
 
+  ```shell
+  $ git merge --no-ff -m "annotation" <branch name>
+  ```
+
+### Stash 相关
+
+注：stash v.  藏
+
+- [参考链接](https://www.cnblogs.com/tocy/p/git-stash-reference.html)
+
+- 储藏当前修改（包括工作区和暂存区）：
+
+  ```shell
+  $ git stash
+  # or add annotations by "save"
+  $ git stash save "annotations"
+  ```
+
+- 恢复stash：
+
+  ```shell
+  # 将缓存堆栈中的第一个stash弹出并删除
+  $ git stash pop
+  ```
+
+  ```shell
+  # 将缓存堆栈中的第一个stash输出但不删除
+  $ git stash apply
+  # 输出制定stash
+  $ git stash apply stash@{0}  # e.g. 输出最新
+  ```
+
+  ```shell
+  # 删除stash
+  $ git stash drop
+  $ git stash drop stash@{0}
+  ```
+
+- 查看现有stash：
+
+  ```shell
+  $ git stash list
+  ```
 
 ## 相关资料
 
@@ -398,5 +447,6 @@
 - [廖雪峰Git命令整理](https://liaoxuefeng.gitee.io/resource.liaoxuefeng.com/git/git-cheat-sheet.html#)
 - [Linux常用命令整理](https://www.cnblogs.com/hi3254014978/p/12643601.html)
 - [git log参数](https://www.cnblogs.com/bellkosmos/p/5923439.html)
-- 更多见收藏夹
+- [git stash](https://www.cnblogs.com/tocy/p/git-stash-reference.html)
+- 更多见浏览器收藏夹
 
