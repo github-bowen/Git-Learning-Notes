@@ -4,10 +4,10 @@
 
 - **cd**：change direcroty 切换目录
 
-  **e.g.**：(注意不是反斜杠)
+  **e.g.**：
   
   ```shell
-  $ cd e:ImportantFile/LearningFiles/2_2/OOP/PreviewFiles/GitLearningNotes
+  $ cd e:ImportantFile/LearningFiles/2_2/OOP/PreviewFiles/GitLearningNotes # 注意不是反斜杠
   
 - **ls**：list files 列出非隐藏文件
 
@@ -48,20 +48,25 @@
 
 ### 具体指令(Ubuntu)
 
-- 显示已安装软件：
+#### 软件相关
+
+- 显示apt/snap已安装软件：
 
   ```shell
   $ sudo apt list --installed
+  $ sudo snap list
+  # 注：apt为advanced packaging tool
+  #    sudo为super user do
   ```
 
-  注：```apt```为```advanced packaging tool```
+  
 
-  ​		```sudo```为```super user do```
-
-  显示可升级软件：
+  显示apt可升级软件、apt/snap更新：
 
   ```shell
   $ sudo apt list --upgradeable
+  $ sudo apt upgrade xxx
+  $ sudo snap refresh <xxx>  # 若不加文件名则更新全部
   ```
 
 - 卸载软件：
@@ -76,16 +81,25 @@
   $ sudo apt purge xxx
   ```
 
-- apt安装软件包：
+- apt/snap安装软件包：
 
   ```shell
   $ sudo apt install xxx
+  $ sudo snap install xxx
   ```
 
-- snap安装软件包：
+#### 系统资源
+
+- 查看磁盘空间：
 
   ```shell
-  $ snap install xxx
+  $ df -hl
+  ```
+
+- 查看内存空间：
+
+  ```shell
+  $ free [- b  - k  - m]  # B / KB / MB
   ```
 
   
@@ -318,7 +332,7 @@
 
   ```shell
   $ git remote rm name
-  e.g:
+  # e.g:
   $ git remote rm origin
   ```
 
