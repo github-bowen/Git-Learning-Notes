@@ -99,7 +99,7 @@
 - 查看内存空间：
 
   ```shell
-  $ free [- b  - k  - m]  # B / KB / MB
+  $ free [-b  -k  -m]  # B / KB / MB
   ```
 
   
