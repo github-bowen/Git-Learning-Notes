@@ -383,7 +383,15 @@
   $ git branch -d <name>
   ```
 
-- 
+- 在个```git log```后添加参数：
+
+  ```shell
+  $ git log --graph --pretty=oneline --abbrev-commit
+  # --graph: 用ascii图表示分支合并历史
+  # --abbrev-commit: 缩写前面序号SHA （abbreviation n.缩写）
+  ```
+
+  
 
 
 
