@@ -60,8 +60,8 @@
 
 ## Git Bash快捷键
 
-- 复制：ctrl + insert
-- 粘贴：shift + insert
+- 复制：```ctrl + insert``` / ```shift + ctrl + c```
+- 粘贴：```shift + insert``` / ```shift + ctrl + v```
 
 ## Git 命令
 
@@ -116,7 +116,7 @@
 
 ### 增删改查
 
-- 查看仓库状态（是否有文件被修改未add，add后未commit）：
+- 查看仓库状态（是否有文件被修改未add，add后未commit；即工作区、暂存区、版本库间区别）：
 
   ```shell
   $ git status
@@ -128,7 +128,11 @@
   $ git diff
   ```
 
-  查看
+  查看**工作区**和**版本库**的区别：
+
+  ```shell
+  $ git diff HEAD -- file
+  ```
 
 - 查看所有commit历史：
 
@@ -170,7 +174,7 @@
     > ```
   
   - 撤销工作区修改——从工作区回退到最近一次commit（版本库）或add（暂存区）的状态:
-    >即直接丢弃工作区：（checkout还有其他用法：见下面*从版本库删除某个文件*）
+    >即直接丢弃工作区：（checkout还有其他用法：见下面*恢复从版本库删除的某个文件*）
     >```shell
     >$ git checkout -- file
     >```
