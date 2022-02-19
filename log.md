@@ -76,11 +76,19 @@
   $ sudo apt purge xxx
   ```
 
-- 安装软件包：
+- apt安装软件包：
 
   ```shell
   $ sudo apt install xxx
   ```
+
+- snap安装软件包：
+
+  ```shell
+  $ snap install xxx
+  ```
+
+  
 
 ### VI相关命令
 
