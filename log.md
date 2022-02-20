@@ -328,7 +328,7 @@
   $ git remote add origin git@github.com:NormalLLer/GitLearningNotes.git
   ```
   
-  然后：（回车后会提示输入密钥-同qq密码）
+  然后：
   
   ```shell
   $ git push -u origin master
@@ -348,6 +348,14 @@
     ```shell
     $ git push <remote name> <local branch name>:<remote branch name>
     # 将local-branch推送到remote并改名为remote-branch-name
+    ```
+  
+
+  - 注：可用```--force```参数强行push，但有风险！
+  
+    ```shell
+    # e.g.
+    $ git push --force javarepo main
     ```
 
 #### 远程仓库→本地库
@@ -433,7 +441,15 @@
   $ git switch <name>
   ```
 
-- 创建并切换分支
+- 修改本地分支名：
+
+  ```shell
+  $ git branch -m <old> <new>
+  # e.g.
+  $ git branch -m master main  # 将master修改为main
+  ```
+
+- 创建并切换分支：
 
   ```shell
   $ git checkout -b <name>
