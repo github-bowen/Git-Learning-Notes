@@ -395,6 +395,14 @@
   $ git remote rm origin
   ```
 
+- 删除远程库某个分支：
+
+  ```shell
+  $ git push <remote name> --delete <remote branch name>>
+  # e.g.
+  $ git push origin --delete testbranch2	
+  ```
+
 ### 分支管理
 
 - 创建分支：
@@ -419,11 +427,33 @@
   $ git switch -c <name>
   ```
 
-- 查看分支：
+- 创建并将指定远程分支clone到本地：
 
   ```shell
-  $ git branch  # 输出带星号的为当前分支
+  $ git switch -c <local branch name> <remote name>/<remote branch name>
+  # e.g.
+  $ git switch -c localtest origin/testbranch
   ```
+
+- 查看分支：
+
+  - 查看本地库分支：
+
+    ```shell
+    $ git branch
+    ```
+
+  - 查看远程库分支：
+
+    ```shell
+    $ git branch -r
+    ```
+
+  - 查看所有分支：
+
+    ```shell
+    $ git branch -a
+    ```
 
 - fast forward模式与name分支合并（合并后log中无分支名字）：
 
@@ -431,7 +461,7 @@
   $ git merge <name>
   ```
 
-- 删除分支：
+- 删除本地分支：
 
   ```shell
   $ git branch -d <name>
