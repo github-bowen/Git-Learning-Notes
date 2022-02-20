@@ -119,7 +119,7 @@
 
 - **shift + zz**：保存文件并退出
 
-## Git Bash快捷键
+## Git Bash/Ubuntu Terminal快捷键
 
 - 复制：```ctrl + insert``` / ```shift + ctrl + c```
 - 粘贴：```shift + insert``` / ```shift + ctrl + v```
@@ -279,11 +279,13 @@
 
 ### 远程仓库
 
+#### 预备工作
+
 - 注：笔记中使用```SSH```协议，github还支持```HTTP```协议。
 
 - 准备工作步骤
 
-  1. 进入用户主目录(c:Users/BH LU)：
+  1. 进入用户主目录(c:Users/UserName)：
 
      ```shell
      $ cd ~
@@ -299,6 +301,9 @@
 
   3. 在Github设置SSH Key：填上任意Title，在Key文本框里粘贴`id_rsa.pub`文件的内容。
   
+
+#### 本地库→远程仓库
+
 - **首次**将本地库push到远程库上：（在github中新建了```GitLearningNotes```这一repository）
   
   在本地对应仓库运行命令：
@@ -319,15 +324,68 @@
   $ git push -u origin master
   ```
 
-- 将本地库push到远程库：
+- 将本地库push到远程库origin：
+
+  - 格式一：（默认远程库分支名与本地分支名相同）
+
+    ```shell
+    $ git push <remote name> <local branch name>
+    $ git push origin master  # 将本地当前分支push到origin库的master分支上
+    ```
+
+  - 格式二：（重命名远程库分支名）
+
+    ```shell
+    $ git push <remote name> <local branch name>:<remote branch name>
+    # 将local-branch推送到remote并改名为remote-branch-name
+    ```
+
+#### 远程仓库→本地库
+
+- 从远程库克隆（**首次**）：
 
   ```shell
-  $ git push origin master
+  $ git clone git@github.com:<Github name>/<repository name>.git
   ```
+
+- 获取远程仓库更新（但不与本地库合并）：
+
+  ```shell
+  $ git fetch <remote name>
+  ```
+
+- (在fetch后)将其的某个分支与本地当前分支合并：
+
+  ```shell
+  $ git merge <remote name>/<remote branch name>
+  ```
+
+- 以上两个命令的合并：
+
+  ```shell
+  $ git pull <remote name> <remote branch name>:<local branch name>
+  # or
+  $ git pull <remote name> <remote branch name>
+  # or
+  $ git pull
+  ```
+  
+- 退出合并：(恢复合并前状态)
+
+  ```shell
+  $ git merge --abort
+  ```
+
+  
+
+
+#### 其它
 
 - 查看远程库信息：
 
   ```shell
+  $ git remote
+  # or
   $ git remote -v
   ```
 
@@ -339,11 +397,6 @@
   $ git remote rm origin
   ```
 
-- 从远程库克隆
-
-  ```shell
-  $ git clone git@github.com:<Github name>/<repository name>.git
-  ```
 ### 分支管理
 
 - 创建分支：
@@ -389,9 +442,10 @@
 - 在个```git log```后添加参数：
 
   ```shell
-  $ git log --graph --pretty=oneline --abbrev-commit
+  $ git log --graph --pretty=oneline --abbrev-commit -n
   # --graph: 用ascii图表示分支合并历史
   # --abbrev-commit: 缩写前面序号SHA （abbreviation n.缩写）
+  # -n: 显示最新n条
   ```
 
 
@@ -448,5 +502,6 @@
 - [Linux常用命令整理](https://www.cnblogs.com/hi3254014978/p/12643601.html)
 - [git log参数](https://www.cnblogs.com/bellkosmos/p/5923439.html)
 - [git stash](https://www.cnblogs.com/tocy/p/git-stash-reference.html)
+- [github官方git教程](https://docs.github.com/cn/get-started/using-git/about-git)
 - 更多见浏览器收藏夹
 
