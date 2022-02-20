@@ -297,9 +297,19 @@
      $ ssh-keygen -t rsa -C "youremail@example.com"
      ```
 
-     一路回车后在/.ssh中有```id_rsa```(私钥)和```id_rsa.pub```(公钥)。
+     一路回车后（一开始会问要不要设置密码，回车即不需要）在/.ssh中有```id_rsa```(私钥)和```id_rsa.pub```(公钥)。
 
   3. 在Github设置SSH Key：填上任意Title，在Key文本框里粘贴`id_rsa.pub`文件的内容。
+  
+  4. 补：**设置新SSH**
+  
+     进入```.ssh```文件夹后，输入命令：
+  
+     ```shell
+     ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+     ```
+  
+     按一次回车后会问：```Overwrite (y/n)? ```，输入```y```后步骤同上。
   
 
 #### 本地库→远程仓库
@@ -402,6 +412,10 @@
   # e.g.
   $ git push origin --delete testbranch2	
   ```
+
+- 当远程仓库（别人修改）和本地仓库（自己修改）冲突时：
+  - 方法一：先pull（fetch + merge）下来后修改再push（根据git bash的输出反馈进行操作）
+  - 方法二：采用rebase（略）
 
 ### 分支管理
 
