@@ -376,8 +376,6 @@
   $ git merge --abort
   ```
 
-  
-
 
 #### 其它
 
@@ -453,6 +451,14 @@
 
   ```shell
   $ git merge --no-ff -m "annotation" <branch name>
+  ```
+
+- 将本地```lb```分支与远程```rb```分支建立链接：
+
+  ```shell
+  $ git branch --set-upstream-to=<remote name>/<remote branch name> <local branch name>
+  # e.g.
+  $ git branch --set-upstream-to=origin/rb lb
   ```
 
 ### Stash 相关
