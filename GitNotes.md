@@ -1,124 +1,3 @@
-## Linux/Shell命令
-
-### 基础命令
-
-- **cd**：change direcroty 切换目录
-
-  **e.g.**：
-  
-  ```shell
-  $ cd e:ImportantFile/LearningFiles/2_2/OOP/PreviewFiles/GitLearningNotes # 注意不是反斜杠
-  
-- **ls**：list files 列出非隐藏文件
-
-  **dir**：directory 列出非隐藏文件
-
-  （两者略有不同，ls的```GitLearningNotes```为蓝色）
-
-  ```shell
-  $ dir
-  GitLeaningNotes  OO工具链教程.pdf  推送.jpg
-  ```
-
-  ```shell
-  $ ls
-  GitLeaningNotes/  OO工具链教程.pdf  推送.jpg
-  ```
-
-- **ls -a**：list files -all 列出所有文件
-
-- **ls -l / ls -hl**：显示文件时间记录
-
-- **touch**：更改文件时间属性，若不存在则创建一个新文件
-
-- **mkdir**：make directory 创建目录
-
-  **e.g.**：
-
-  ```shell
-  $ mkdir GitLearningNotes
-
-- **pwd**：print working directory 显示当前路径
-
-- **clear**：清除bash屏幕（实质相当于翻页）
-
-- **reset**：清除历史输入
-
-- **cat**：concatenate 显示内容
-
-- **rm**：remove file 删除文件
-
-- **reboot**：重启
-
-- **echo**：打印字符串
-
-### 具体指令(Ubuntu)
-
-#### 软件相关
-
-- 显示apt/snap已安装软件：
-
-  ```shell
-  $ sudo apt list --installed
-  $ sudo snap list
-  # 注：apt为advanced packaging tool
-  #    sudo为super user do
-  ```
-
-  显示apt可升级软件、apt/snap更新：
-
-  ```shell
-  $ sudo apt list --upgradeable
-  $ sudo apt upgrade xxx
-  $ sudo snap refresh <xxx>  # 若不加文件名则更新全部
-  ```
-  
-- 卸载软件：
-
-  ```shell
-  $ sudo apt remove xxx
-  ```
-
-  删除软件（包括所有文件）:
-
-  ```shell
-  $ sudo apt purge xxx
-  ```
-
-- apt/snap安装软件包：
-
-  ```shell
-  $ sudo apt install xxx
-  $ sudo snap install xxx
-  ```
-
-#### 系统资源
-
-- 查看磁盘空间：
-
-  ```shell
-  $ df -hl
-  ```
-
-- 查看内存空间：
-
-  ```shell
-  $ free [-b  -k  -m]  # B / KB / MB
-  ```
-
-
-### VI相关命令
-
-- **vi**：在VI中打开已存在文件或创建新文件
-  
-- **i**：进入插入模式
-
-- **Esc**：退出插入模式
-
-- **u**：撤销上次更改
-
-- **shift + zz**：保存文件并退出
-
 ## Git Bash/Ubuntu Terminal快捷键
 
 - 复制：```ctrl + insert``` / ```shift + ctrl + c```
@@ -131,7 +10,9 @@
 - 查看git相关命令说明
 
   ```shell
-  $ git
+  $ git init
+  # or
+  $ git init <directory>
   ```
 
 - 设置名字和邮箱
@@ -164,10 +45,10 @@
   $ git init
   ```
 
-- 添加文件：
+- 添加文件(夹)：
 
   ```shell
-  $ git add xxx.xx
+  $ git add <fils>/<directory>
 
 - 提交文件：（带说明）
 
@@ -393,6 +274,7 @@
 - 从远程库克隆（**首次**）：
 
   ```shell
+  # git clone <repo:local/SSH/HTTP>
   $ git clone git@github.com:<Github name>/<repository name>.git
   ```
 
