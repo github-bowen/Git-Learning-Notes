@@ -635,7 +635,45 @@
   $ git show <tag name>
   ```
 
-  
+- 本地仓库删除标签：
+
+  ```shell
+  $ git tag -d <tag name>
+  ```
+
+- 本地与远程仓库的相关信息交互
+
+  - 推送指定标签到远程：
+
+    ```shell
+    $ git push <remote name> <tag name>
+    # e.g.
+    $ git push origin v1.0
+    ```
+
+  - 推送所有标签到远程：
+
+    ```shell
+    $ git push <remote name> --tags
+    ```
+
+  - 从远程仓库删除指定tag：
+
+    - 先从本地删除（设删除v0.9)
+
+      ```shell
+      $ git tag -d v0.9 
+      ```
+
+    - 再删除远程tag：
+
+      ```shell
+      $ git push <remote name> :refs/tags/<tag>
+      # e.g.
+      $ git push origin :refs/tags/v0.9
+      ```
+
+      
 
 ## 相关资料
 
