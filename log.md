@@ -27,7 +27,7 @@
 
 - **ls -a**：list files -all 列出所有文件
 
-- **ls -l**：显示文件时间记录
+- **ls -l / ls -hl**：显示文件时间记录
 
 - **touch**：更改文件时间属性，若不存在则创建一个新文件
 
@@ -148,6 +148,14 @@
   $ git config user.email
   ```
 
+- 查看git工具版本
+
+  ```shell
+  $ git version
+  # or
+  $ git --version
+  ```
+
 ### 创建repository
 
 - 将当前目录初始化为仓库：
@@ -195,17 +203,39 @@
   $ git diff HEAD -- file
   ```
 
-- 查看所有commit历史：
+- ```git log```（查看commit历史信息）相关：
 
-  ```shell
-  $ git log
-  ```
+  - 基本命令（不带参数）：
 
-  简洁版：
-  
-  ```shell
-  $ git log --pretty=oneline
-  ```
+    ```shell
+    $ git log
+    ```
+
+  - commit在一行内显示：
+
+    ```shell
+    $ git log --pretty=oneline
+    # or
+    $ git log --oneline
+    ```
+
+  - 用图线展示branch历史：
+
+    ```shell
+    $ git log --branch --pretty=oneline
+    ```
+
+  - 缩短commit id：
+
+    ```shell
+    $ git log --abbrev-commit
+    ```
+
+  - 展示最新n次commit：
+
+    ```shell
+    $ git log -n
+    ```
 
 - 查看输入的命令历史：（来确定要回到未来的哪个版本）
 
@@ -561,6 +591,52 @@
   $ git stash list
   ```
 
+### 标签相关
+
+- 创建标签
+
+  ```shell
+  $ git tag -a <tag name> -m "annotations" <commit id>
+  ```
+
+  - 形式一：在最新commit创建tag
+
+    ```shell
+    $ git tag <name>
+    # e.g.
+    $ git tag v1.0
+    ```
+
+  - 形式二：在指定```commit id```创建tag
+
+    ```shell
+    $ git tag <name> <id>
+    # e.g.
+    $ git tag v1.1 f52c633
+    ```
+
+  - 形式三：在指定```commit id```创建带有说明文字的tag
+
+    ```shell
+    $ git tag -a <tag name> -m "annotations" <commit id>
+    # e.g.
+    $ git tag -a v1.2 -m "create tag v1.2 in id:1094ab" 1094ab
+    ```
+
+- 查看标签列表：
+
+  ```shell
+  $ git tag
+  ```
+
+- 查看tag具体说明：(tag说明文字、commit说明文字等)
+
+  ```shell
+  $ git show <tag name>
+  ```
+
+  
+
 ## 相关资料
 
 - [廖雪峰Git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
@@ -569,5 +645,6 @@
 - [git log参数](https://www.cnblogs.com/bellkosmos/p/5923439.html)
 - [git stash](https://www.cnblogs.com/tocy/p/git-stash-reference.html)
 - [github官方git教程](https://docs.github.com/cn/get-started/using-git/about-git)
+- [--decorate参数与git版本的关系](https://stackoverflow.com/questions/51009808/whats-the-difference-between-git-log-and-git-log-decorate)
 - 更多见浏览器收藏夹
 
