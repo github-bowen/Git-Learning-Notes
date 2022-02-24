@@ -247,6 +247,7 @@
   
   ```shell
   $ git remote add origin git@github.com:NormalLLer/GitLearningNotes.git
+  $ git remote add origin git@gitlab.oo.buaa.edu.cn:oo_2022/pre_2022_2_20231198_pre2_task2.git
   ```
   
   然后：
@@ -254,7 +255,7 @@
   ```shell
   $ git push -u origin master
   ```
-
+  
 - 将本地库push到远程库origin：
 
   - 格式一：（默认远程库分支名与本地分支名相同）
