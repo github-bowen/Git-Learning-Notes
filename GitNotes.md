@@ -7,13 +7,6 @@
 
 ### Git初始化与帮助
 
-- 查看git相关命令说明
-
-  ```shell
-  $ git init
-  # or
-  $ git init <directory>
-  ```
 
 - 设置名字和邮箱
 
@@ -39,16 +32,33 @@
 
 ### 创建repository
 
-- 将当前目录初始化为仓库：
+- 创建空的Git仓库
 
-  ```shell
-  $ git init
-  ```
+  - 缺省，初始分支名为master：
+
+    ```shell
+    $ git init
+    ```
+
+  - 指定初始分支名：
+
+    ```shell
+    $ git init --initial-branch=<branch name>
+    # e.g.
+    $ git init --initial-branch=main
+    ```
 
 - 添加文件(夹)：
 
   ```shell
   $ git add <fils>/<directory>
+  ```
+
+  特殊：add所有文件
+
+  ```shell
+  $ git add .
+  ```
 
 - 提交文件：（带说明）
 
