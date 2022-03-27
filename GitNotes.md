@@ -113,7 +113,7 @@
   - 用图线展示branch历史：
 
     ```shell
-    $ git log --branch --pretty=oneline
+    $ git log --graph --pretty=oneline
     ```
 
   - 缩短commit id：
